@@ -4,6 +4,8 @@ import openai
 import streamlit as st
 
 
+# thesoothsayeria.com
+
 def main():
     build_header()
     
@@ -22,17 +24,27 @@ def build_header():
 
 
 def ask_for_tech_input():
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     col1.markdown('##')
     col1.markdown('<div style="text-align: right;">I want to know the future of:</div>', unsafe_allow_html=True)
     tech_name = col2.text_input("", max_chars=50)
     col2.markdown('*For example, try: Computers*')
+
+    col3.markdown('##')
+    if tech_name:
+        col3.button('Ask me again!')
+    else:
+        col3.button('Ask!')
+
     return tech_name
 
 
 def print_prediction(prediction):
     st.markdown('\n---\n')
     st.markdown(f"**In the future**,{prediction}")
+    st.markdown('\n---\n')
+    # col1, col2, col3 = st.columns(3)
+    # col3.button('Ask me again')
 
 
 def request_future(tech_name):
