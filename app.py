@@ -7,10 +7,10 @@ import streamlit as st
 def main():
     build_header()
     
-    tech_name = st.text_input("I want to know the future of:", max_chars=30)
+    tech_name = ask_for_tech_input()
 
     if tech_name:
-        with st.spinner(text=f"Asking GPT-3 about the future of {tech_name}..."):
+        with st.spinner(text=f'Asking GPT-3 about the future of {tech_name}...'):
             prediction = request_future(tech_name)
         print_prediction(prediction)
 
@@ -18,8 +18,16 @@ def main():
 def build_header():
     st.header('SOOTHS-AI-R :crystal_ball:')
     st.markdown('You can now ask AI about the future!')
-    st.markdown('There is a rumour that GPT-3 is so good because it has a data feed from the future. What do you think, can GPT-3 predict the future?')
-    st.markdown('*To use **SOOTHS-AI-R**, type a noun into the box below.*')
+    st.markdown('There is a rumour that GPT-3 is so smart because it has a data feed directly from the future. What do you think, can GPT-3 predict the future?')
+
+
+def ask_for_tech_input():
+    col1, col2 = st.columns(2)
+    col1.markdown('##')
+    col1.markdown('<div style="text-align: right;">I want to know the future of:</div>', unsafe_allow_html=True)
+    tech_name = col2.text_input("", max_chars=50)
+    col2.markdown('*For example, try: Computers*')
+    return tech_name
 
 
 def print_prediction(prediction):
