@@ -16,9 +16,10 @@ def main():
 
 
 def build_header():
-    st.header('SOOTHS-AI-R')
-    st.markdown('You can now ask AI about the future! There is a rumour that GPT-3 is so good because it has a data feed from the future. What do you think? Can GPT-3 predict the future?')
-    st.markdown('*To use **SOOTHS-AI-R**, type a noun into the box below*')
+    st.header('SOOTHS-AI-R :crystal_ball:')
+    st.markdown('You can now ask AI about the future!')
+    st.markdown('There is a rumour that GPT-3 is so good because it has a data feed from the future. What do you think, can GPT-3 predict the future?')
+    st.markdown('*To use **SOOTHS-AI-R**, type a noun into the box below.*')
 
 
 def print_prediction(prediction):
