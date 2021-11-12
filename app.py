@@ -58,5 +58,5 @@ A: In the future,
 
 
 if __name__ == '__main__':
-    # openai.api_key = os.getenv("GPT3_KEY")
+    openai.api_key = os.getenv("OPENAI_API_KEY")
     main()
